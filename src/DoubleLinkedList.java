@@ -7,7 +7,7 @@ public class DoubleLinkedList<T> {
         tail = null;
     }
 
-    public void add(T data) { // Метод добавляет новый узел в конец списка
+    public void addToTail(T data) { // Метод добавляет новый узел в конец списка
         Node<T> newNode = new Node<>(data); // Создаём новый объект Node с данными data
         if (head == null) { // если список пуст устанавливаем head и tail в новый узел
             head = newNode;
@@ -16,6 +16,18 @@ public class DoubleLinkedList<T> {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
+        }
+    }
+
+    public void addToHead(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else{
+            head.prev = newNode;
+            newNode.next = head;
+            head = newNode;
         }
     }
 
@@ -36,6 +48,22 @@ public class DoubleLinkedList<T> {
                 return;
             }
             current = current.next;
+        }
+    }
+
+    public void removeHead() { //Удаление с головы списка
+        Node<T> current = head;
+        if (current != null) {
+            head = current.next;
+            head.prev = null;
+        }
+    }
+
+    public void removeTail() {
+        Node<T> current = tail;
+        if (tail != null) {
+            tail = current.prev;
+            tail.next = null;
         }
     }
 
