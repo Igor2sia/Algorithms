@@ -19,7 +19,7 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    public void addToHead(T data) {
+    public void addToHead(T data) { // Метод добавляет новый узел в конец списка
         Node<T> newNode = new Node<>(data);
         if (head == null) {
             head = newNode;
@@ -59,7 +59,7 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    public void removeTail() {
+    public void removeTail() { // Удаление с конца списка
         Node<T> current = tail;
         if (tail != null) {
             tail = current.prev;
