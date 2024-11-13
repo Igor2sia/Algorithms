@@ -1,4 +1,11 @@
-public class DoubleLinkedList<T> {
+package lab_1;
+
+import java.util.Iterator;
+
+public class DoubleLinkedList<T> implements Iterable<T> {
+
+
+
     private Node<T> head; // Ссылки на первый и последний узлы в списке
     private Node<T> tail;
 
@@ -24,7 +31,7 @@ public class DoubleLinkedList<T> {
         if (head == null) {
             head = newNode;
             tail = newNode;
-        } else{
+        } else {
             head.prev = newNode;
             newNode.next = head;
             head = newNode;
@@ -86,7 +93,81 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    private static class Node<T> { // Класс, который представляет отдельный узел в списке
+    public T get(int index) { // Получаем по индексу
+        Node<T> current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                return current.data;
+            }
+            count++;
+            current = current.next;
+        }
+        throw new IndexOutOfBoundsException("Index out of bounds");
+    }
+
+    public void set(int index, T data) { // Добавляем по индексу
+        Node<T> current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                current.data = data;
+                return;
+            }
+            count++;
+            current = current.next;
+        }
+        throw new IndexOutOfBoundsException("Index out of bounds");
+    }
+
+    public void removeAt(int index) { // Удаляем по индексу
+        Node<T> current = head;
+        int count = 0;
+        while (current != null) {
+            if (count == index) {
+                if (current.prev != null) {
+                    current.prev.next = current.next;
+                } else {
+                    head = current.next;
+                }
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                } else {
+                    tail = current.prev;
+                }
+                return;
+            }
+            count++;
+            current = current.next;
+        }
+        throw new IndexOutOfBoundsException("Index out of bounds");
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new DoubleLinkedListIterator();
+    }
+
+    private class DoubleLinkedListIterator implements Iterator<T>{
+        private Node<T> current = head;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public T next() {
+            if (!hasNext()) {
+                throw new IllegalStateException("No more elements in the list");
+            }
+            T data = current.data;
+            current = current.next;
+            return data;
+        }
+    }
+
+    public static class Node<T> { // Класс, который представляет отдельный узел в списке
         private T data; // Данные хранящиеся в узле
         private Node<T> prev; // Ссылка на предыдущий узел
         private Node<T> next; // Ссылка на следующий узел

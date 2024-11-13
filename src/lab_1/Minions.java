@@ -1,3 +1,5 @@
+package lab_1;
+
 import static java.lang.String.format;
 
 public class Minions {
@@ -9,6 +11,13 @@ public class Minions {
         this.age = age;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     @Override
     public String toString() {

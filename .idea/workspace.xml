@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3eec7547-f313-48ff-8e43-e94389e58680" name="Changes" comment="update">
+    <list default="true" id="3eec7547-f313-48ff-8e43-e94389e58680" name="Changes" comment="comment upgrade">
+      <change afterPath="$PROJECT_DIR$/src/lab_2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab_2/MinionsAgeComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab_2/MinionsNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab_2/Stack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoubleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab_1/DoubleLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab_1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Minions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab_1/Minions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +50,11 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lab_2" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726165175458</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="comment upgrade">
+      <option name="closed" value="true" />
+      <created>1726230095209</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726230095209</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +114,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="create" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="comment upgrade" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment upgrade" />
   </component>
 </project>
