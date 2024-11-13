@@ -11,5 +11,6 @@ public class MinionsAgeComparator implements Comparator<Minions> {
         } else if (o1.getAge() < o2.getAge()) {
             return -1;
         } else return 0;
+
     }
 }
