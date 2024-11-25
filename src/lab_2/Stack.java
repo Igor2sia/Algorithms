@@ -1,68 +1,44 @@
-package lab_2;
-import java.util.EmptyStackException;
-import java.util.Iterator;
+import java.util.Comparator;
+import java.util.TreeSet;
 
-public class Stack<T> implements Iterable<T> {
-    private T[] array;
-    private int size;
+public class Main {
+    public static void main(String[] args) {
+//        DoubleLinkedList<Minions> list = new DoubleLinkedList<>();
+//        list.addToTail(new Minions("Филипп", 19));
+//        list.addToTail(new Minions("Артём", 19));
+//        list.addToTail(new Minions("Даня", 20));
+//        list.print();
+//        System.out.println("\n");
+//        list.addToHead(new Minions("Моcкич", 15));
+//        list.print();
+//        list.removeHead();
+//        System.out.println("\n");
+//        list.remove(new Minions("Филипп", 19));
+//        list.print();
+//        System.out.println("\n");
+//        list.edit(new Minions("Артём", 19), new Minions("Паша", 23));
+//        list.print();
 
-    public Stack(int initialCapacity) {
-        array = (T[]) new Object[initialCapacity];
-        size = 0;
-    }
+//        Comparator<Minions> mcomp = new MinionsComparator().thenComparing(new MinionsAgeComparator());
+//        TreeSet<Minions> minions = new TreeSet<>(mcomp);
+//        minions.add(new Minions("Филипп", 19));
+//        minions.add(new Minions("Артём", 19));
+//        minions.add(new Minions("Даня", 20));
+//        minions.add(new Minions("Моcкич", 15));
+//        minions.add(new Minions("Моcкич", 3));
+//
+//        for(Minions  o : minions){
+//
+//            System.out.println(o.getName() + " " + o.getAge());
+//        }
+        Stack stack = new Stack<>(10);
+        stack.fullstack(stack);
+        System.out.println(stack.getElement(7)); // выведет цифру 2
+        System.out.println(stack.getElement(9)); // выведет цифру 0
+        System.out.println();
+        stack.printStack();
 
-    public void push(T element) {
-        if (size == array.length) {
-            T[] newArray = (T[]) new Object[array.length * 2];
-            System.arraycopy(array, 0, newArray, 0, array.length);
-            array = newArray;
-        }
-        array[size++] = element;
-    }
 
-    public T pop() {
-        if (size == 0) {
-            throw new EmptyStackException();
-        }
-        return array[--size];
-    }
 
-    public T peek() {
-        if (size == 0) {
-            throw new EmptyStackException();
-        }
-        return array[size--];
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int size() {
-        return size;
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return new StackIterator();
-    }
-
-    private class StackIterator implements Iterator<T> {
-        private int currentIndex = size - 1;
-
-        @Override
-        public boolean hasNext() {
-            return currentIndex >= 0;
-        }
-
-        @Override
-        public T next() {
-            return array[currentIndex--];
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
     }
 }
